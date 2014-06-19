@@ -16,7 +16,7 @@ the entire blockchain.
 ## Example Usage
 
 ``` js
-var bcoin = require('bcoin');
+var bcoin = require('./lib/bcoin.js');
 var net = require('net');
 
 // Uro network seeds
@@ -54,10 +54,10 @@ var pool = new bcoin.pool({
 
     return socket;
   },
-  // Storage DB for transactions and wallet, must support
+  //Storage DB for transactions and wallet, must support
   // the levelup `put`/`del`/`createReadStream` methods.
-  storage: require('levelup')(process.env.HOME + '/.bcoin', {
-    db: require('leveldown'),
+  storage: require('levelup')('./bcoin-uro', {
+    db: require('memdown'),
     valueEncoding: 'json'
   })
 });
