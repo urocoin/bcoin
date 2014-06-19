@@ -11,11 +11,11 @@ describe('Wallet', function() {
   });
 
   it('should validate existing address', function() {
-    assert(bcoin.wallet.validateAddress('1KQ1wMNwXHUYj1nV2xzsRcKUH8gVFpTFUc'));
+    assert(bcoin.wallet.validateAddress('UhtP7ev1oLZyv3hR99qRQyw6dGxTVwp3vu'));
   });
 
   it('should fail to validate invalid address', function() {
-    assert(!bcoin.wallet.validateAddress('1KQ1wMNwXHUYj1nv2xzsRcKUH8gVFpTFUc'));
+    assert(!bcoin.wallet.validateAddress('UhtP7ev1oLZyv3hR99qRQyw6dGxTVwp3vv'));
   });
 
   it('should sign/verify TX', function() {
