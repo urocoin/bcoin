@@ -1,10 +1,10 @@
-# BCoin
+# BCoin for Uro
 
-**BCoin** is a bitcoin client which implements [BIP-37][1]. It can track
+**BCoin for Uro** is a Uro client which implements [BIP-37][1]. It can track
 transactions, public keys, and public key hashes (bitcoin addresses) without
 saving the entire blockchain to disk. This means you can have a wallet with a
-synchronized balance and send and receive payments without keeping track of a
-20GB database.
+synchronized balance and send and receive payments without keeping track of a 
+large database.
 
 BCoin is implemented in *pure* javascript, and is browserify-able (this means
 compiling a binding to an ECDSA library is not even required for node.js).
@@ -19,14 +19,16 @@ the entire blockchain.
 var bcoin = require('bcoin');
 var net = require('net');
 
-// Standard bitcoin seeds
+// Uro network seeds
 var seeds = [
-  'seed.bitcoin.sipa.be',
-  'dnsseed.bluematt.me',
-  'dnsseed.bitcoin.dashjr.org',
-  'seed.bitcoinstats.com',
-  'seed.bitnodes.io',
-  'bitseed.xf2.org'
+  '128.199.204.45',
+  '148.251.70.194',
+  '144.76.238.2',
+  '62.210.141.204',
+  '162.243.193.232',
+  '23.226.228.25',
+  '192.99.3.15',
+  '188.226.239.21'
 ];
 
 var index = 0;
@@ -43,7 +45,7 @@ var pool = new bcoin.pool({
     var addr = seeds[index++];
     var parts = addr.split(':');
     var host = parts[0];
-    var port = +parts[1] || 8333;
+    var port = +parts[1] || 36348;
     var socket = net.connect(port, host);
 
     socket.on('connect', function() {
@@ -93,7 +95,7 @@ pool.on('tx', function(tx, peer) {
 // Open our ecdsa private key (our bitcoin address is derived from this)
 // `priv` can be a hex string, a binary array, or a big number (bn.js)
 var wallet = new bcoin.wallet({
-  priv: fs.readFileSync(process.env.HOME + '/.bcoin/priv'),
+  priv: 'W8gHmdh3vaHtGmFXuJngebVC7NKjiy1xw8h3phebccBrN2UcjTqw',
   storage: pool.storage
 });
 
