@@ -2,7 +2,7 @@
   "name": "bcoin-uro",
   "version": "0.14.2",
   "description": "Pure JavaScript cryptocurrency library for Uro - forked from BCoin",
-  "main": "lib/bcoin.js",
+  "main": "lib/bcoin-uro.js",
   "scripts": {
     "test": "mocha --reporter spec test/*-test.js"
   },
