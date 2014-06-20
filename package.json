@@ -1,25 +1,26 @@
 {
-  "name": "bcoin",
+  "name": "bcoin-uro",
   "version": "0.14.2",
-  "description": "Bitcoin bike-shed",
+  "description": "Pure JavaScript cryptocurrency library for Uro - forked from BCoin",
   "main": "lib/bcoin.js",
   "scripts": {
     "test": "mocha --reporter spec test/*-test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:indutny/bcoin"
+    "url": "git@github.com:uro-/bcoin"
   },
   "keywords": [
     "bitcoin",
-    "bcoin"
+    "bcoin",
+    "uro"
   ],
   "author": "Fedor Indutny <fedor@indutny.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/indutny/bcoin/issues"
+    "url": "https://github.com/uro-/bcoin/issues"
   },
-  "homepage": "https://github.com/indutny/bcoin",
+  "homepage": "https://github.com/uro-/bcoin",
   "dependencies": {
     "async": "^0.8.0",
     "bn.js": "^0.10.0",
